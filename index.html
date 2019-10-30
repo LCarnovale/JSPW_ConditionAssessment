@@ -380,6 +380,8 @@
                         <td colspan="2"><strong>Comments</strong><br />' + (feature.properties['Comments'] !== null ? Autolinker.link(String(feature.properties['Comments'])) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td colspan="2"><strong>Photo1</strong><br /><img src="' + (feature.properties['URL'] !== null ? Autolinker.link(String(feature.properties['URL'])) : '') + '" height="150px"></td>\
+
                         <td colspan="2"><strong>Photo1</strong><br />' + (feature.properties['URL'] !== null ? Autolinker.link(String(feature.properties['URL'])) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -534,7 +536,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Condition'] !== null?String('<div style="color: #ffffff; font-size: 12pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Condition']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Structureconditionscore_3'});
+            layer.bindTooltip((layer.feature.properties['Condition'] !== null?String('<div style="color: #090d3b; font-size: 12pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Condition']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Structureconditionscore_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
