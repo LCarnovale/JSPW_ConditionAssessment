@@ -274,10 +274,10 @@
                         <td>' + (feature.properties['Funtional'] !== null ? Autolinker.link(String(feature.properties['Funtional'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Photo1</strong><br /><img src="' + (feature.properties['Photo'] !== null ? Autolinker.link(String(feature.properties['Photo'])) : '') + '" height="200px" width="266px"/></td>\
+                        <td colspan="2"><strong>Photo1</strong><br />' + (feature.properties['URL'] !== null ? Autolinker.link(String(feature.properties['URL'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Photo2</strong><br /><img src="' + (feature.properties['Photo2'] !== null ? Autolinker.link(String(feature.properties['Photo2'])) : '') + '" height="200px" width="266px"/></td>\
+                        <td colspan="2"><strong>Photo2</strong><br />' + (feature.properties['URL2'] !== null ? Autolinker.link(String(feature.properties['URL2'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -380,16 +380,16 @@
                         <td colspan="2"><strong>Comments</strong><br />' + (feature.properties['Comments'] !== null ? Autolinker.link(String(feature.properties['Comments'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Photo1</strong><br /><img src="' + (feature.properties['photo'] !== null ? Autolinker.link(String(feature.properties['photo'])) : '') + '" height="200px" width="266px"/></td>\
+                        <td colspan="2"><strong>Photo1</strong><br />' + (feature.properties['URL'] !== null ? Autolinker.link(String(feature.properties['URL'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Photo2</strong><br /><img src="' + (feature.properties['photo2'] !== null ? Autolinker.link(String(feature.properties['photo2'])) : '') + '" height="200px" width="266px"/></td>\
+                        <td colspan="2"><strong>Photo2</strong><br />' + (feature.properties['URL2'] !== null ? Autolinker.link(String(feature.properties['URL2'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Photo3</strong><br /><img src="' + (feature.properties['photo3'] !== null ? Autolinker.link(String(feature.properties['photo3'])) : '') + '" height="200px" width="266px"/></td>\
+                        <td colspan="2"><strong>Photo3</strong><br />' + (feature.properties['URL3'] !== null ? Autolinker.link(String(feature.properties['URL3'])) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 600});
+            layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
         function style_Pointsofinterestegdefects_4_0() {
