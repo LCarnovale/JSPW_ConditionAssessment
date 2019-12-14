@@ -32,7 +32,6 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Studyarea_1.js"></script>
         <script src="data/Beachaccess_2.js"></script>
         <script src="data/Structureconditionscore_3.js"></script>
         <script src="data/Pointsofinterestegdefects_4.js"></script>
@@ -58,7 +57,7 @@
             zoomControl:true, maxZoom:28, minZoom:1
         }).fitBounds([[-28.641438140002133,153.6108759250102],[-28.639382421838008,153.61506180697802]]);
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        map.attributionControl.setPrefix('<img src="images/logo-bluecoast.png" alt="Bluecoast logo" width=150><a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var measureControl = new L.Control.Measure({
             position: 'topleft',
             primaryLengthUnit: 'meters',
@@ -79,66 +78,6 @@
         var layer_Aerialphoto_0 = new L.imageOverlay(img_Aerialphoto_0, img_bounds_Aerialphoto_0);
         bounds_group.addLayer(layer_Aerialphoto_0);
         map.addLayer(layer_Aerialphoto_0);
-        function pop_Studyarea_1(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Studyarea_1_0() {
-            return {
-                pane: 'pane_Studyarea_1',
-                opacity: 1,
-                color: 'rgba(0,162,255,1.0)',
-                dashArray: '',
-                lineCap: 'round',
-                lineJoin: 'round',
-                weight: 4.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Studyarea_1');
-        map.getPane('pane_Studyarea_1').style.zIndex = 401;
-        map.getPane('pane_Studyarea_1').style['mix-blend-mode'] = 'normal';
-        var layer_Studyarea_1 = new L.geoJson(json_Studyarea_1, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Studyarea_1',
-            layerName: 'layer_Studyarea_1',
-            pane: 'pane_Studyarea_1',
-            onEachFeature: pop_Studyarea_1,
-            style: style_Studyarea_1_0,
-        });
-        bounds_group.addLayer(layer_Studyarea_1);
-        map.addLayer(layer_Studyarea_1);
-        function pop_Beachaccess_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
 
         function style_Beachaccess_2_0() {
             return {
@@ -274,10 +213,10 @@
                         <td>' + (feature.properties['Funtional'] !== null ? Autolinker.link(String(feature.properties['Funtional'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Photo1</strong><br />' + (feature.properties['URL'] !== null ? Autolinker.link(String(feature.properties['URL'])) : '') + '</td>\
+                        <td colspan="2"><strong>Photo1</strong><br /><img src="' + (feature.properties['Photo'] !== null ? Autolinker.link(String(feature.properties['Photo'])) : '') + '" height="200px" width="266px"/></td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Photo2</strong><br />' + (feature.properties['URL2'] !== null ? Autolinker.link(String(feature.properties['URL2'])) : '') + '</td>\
+                        <td colspan="2"><strong>Photo2</strong><br /><img src="' + (feature.properties['Photo2'] !== null ? Autolinker.link(String(feature.properties['Photo2'])) : '') + '" height="200px" width="266px"/></td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -380,16 +319,16 @@
                         <td colspan="2"><strong>Comments</strong><br />' + (feature.properties['Comments'] !== null ? Autolinker.link(String(feature.properties['Comments'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Photo1</strong><br />' + (feature.properties['URL'] !== null ? Autolinker.link(String(feature.properties['URL'])) : '') + '</td>\
+                        <td colspan="2"><strong>Photo1</strong><br /><img src="' + (feature.properties['photo'] !== null ? Autolinker.link(String(feature.properties['photo'])) : '') + '" height="200px" width="266px"/></td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Photo2</strong><br />' + (feature.properties['URL2'] !== null ? Autolinker.link(String(feature.properties['URL2'])) : '') + '</td>\
+                        <td colspan="2"><strong>Photo2</strong><br /><img src="' + (feature.properties['photo2'] !== null ? Autolinker.link(String(feature.properties['photo2'])) : '') + '" height="200px" width="266px"/></td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Photo3</strong><br />' + (feature.properties['URL3'] !== null ? Autolinker.link(String(feature.properties['URL3'])) : '') + '</td>\
+                        <td colspan="2"><strong>Photo3</strong><br /><img src="' + (feature.properties['photo3'] !== null ? Autolinker.link(String(feature.properties['photo3'])) : '') + '" height="200px" width="266px"/></td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, {maxHeight: 600});
         }
 
         function style_Pointsofinterestegdefects_4_0() {
@@ -526,7 +465,7 @@
         bounds_group.addLayer(layer_Chainage_6);
         map.addLayer(layer_Chainage_6);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Chainage_6.png" /> Chainage': layer_Chainage_6,'<img src="legend/Chainagepoints2m_5.png" /> Chainage points (2m)': layer_Chainagepoints2m_5,'<img src="legend/Pointsofinterestegdefects_4.png" /> Points of interest (e.g. defects)': layer_Pointsofinterestegdefects_4,'Structure condition score<br /><table><tr><td style="text-align: center;"><img src="legend/Structureconditionscore_3_1failed0.png" /></td><td>1 (failed)</td></tr><tr><td style="text-align: center;"><img src="legend/Structureconditionscore_3_2poor1.png" /></td><td>2 (poor)</td></tr><tr><td style="text-align: center;"><img src="legend/Structureconditionscore_3_3fair2.png" /></td><td>3 (fair)</td></tr><tr><td style="text-align: center;"><img src="legend/Structureconditionscore_3_4good3.png" /></td><td>4 (good)</td></tr><tr><td style="text-align: center;"><img src="legend/Structureconditionscore_3_5excellent4.png" /></td><td>5 (excellent)</td></tr></table>': layer_Structureconditionscore_3,'<img src="legend/Beachaccess_2.png" /> Beach access': layer_Beachaccess_2,'<img src="legend/Studyarea_1.png" /> Study area': layer_Studyarea_1,"Aerial photo": layer_Aerialphoto_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Chainagepoints2m_5.png" /> Chainage points (2m)': layer_Chainagepoints2m_5,'<img src="legend/Pointsofinterestegdefects_4.png" /> Points of interest (e.g. defects)': layer_Pointsofinterestegdefects_4,'Structure condition score<br /><table><tr><td style="text-align: center;"><img src="legend/Structureconditionscore_3_1failed0.png" /></td><td>1 (failed)</td></tr><tr><td style="text-align: center;"><img src="legend/Structureconditionscore_3_2poor1.png" /></td><td>2 (poor)</td></tr><tr><td style="text-align: center;"><img src="legend/Structureconditionscore_3_3fair2.png" /></td><td>3 (fair)</td></tr><tr><td style="text-align: center;"><img src="legend/Structureconditionscore_3_4good3.png" /></td><td>4 (good)</td></tr><tr><td style="text-align: center;"><img src="legend/Structureconditionscore_3_5excellent4.png" /></td><td>5 (excellent)</td></tr></table>': layer_Structureconditionscore_3,'<img src="legend/Beachaccess_2.png" /> Beach access': layer_Beachaccess_2,"Aerial photo": layer_Aerialphoto_0,},{collapsed:false}).addTo(map);
         setBounds();
         var i = 0;
         layer_Structureconditionscore_3.eachLayer(function(layer) {
