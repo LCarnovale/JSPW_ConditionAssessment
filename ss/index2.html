@@ -57,7 +57,7 @@
             zoomControl:true, maxZoom:28, minZoom:1
         }).fitBounds([[-28.641438140002133,153.6108759250102],[-28.639382421838008,153.61506180697802]]);
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<img src="images/logo-bluecoast.png" height="37px" width="150px"/><a href="https://www.bluecoastconsulting.com.au"> Bluecoast, 2019</a>');
+        map.attributionControl.setPrefix('<img src="images/logo-bluecoast.png" height="37px" width="150px"/><a href="https://www.bluecoastconsulting.com.au">Bluecoast Consulting Engineers, 2019</a>');
         var measureControl = new L.Control.Measure({
             position: 'topleft',
             primaryLengthUnit: 'meters',
@@ -78,6 +78,50 @@
         var layer_Aerialphoto_0 = new L.imageOverlay(img_Aerialphoto_0, img_bounds_Aerialphoto_0);
         bounds_group.addLayer(layer_Aerialphoto_0);
         map.addLayer(layer_Aerialphoto_0);
+        function pop_Studyarea_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Studyarea_1_0() {
+            return {
+                pane: 'pane_Studyarea_1',
+                opacity: 1,
+                color: 'rgba(0,162,255,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Studyarea_1');
+        map.getPane('pane_Studyarea_1').style.zIndex = 401;
+        map.getPane('pane_Studyarea_1').style['mix-blend-mode'] = 'normal';
+        var layer_Studyarea_1 = new L.geoJson(json_Studyarea_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Studyarea_1',
+            layerName: 'layer_Studyarea_1',
+            pane: 'pane_Studyarea_1',
+            onEachFeature: pop_Studyarea_1,
+            style: style_Studyarea_1_0,
+        });
+        bounds_group.addLayer(layer_Studyarea_1);
+        map.addLayer(layer_Studyarea_1);
         function pop_Beachaccess_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
